@@ -5,10 +5,10 @@
 	class SiteContainText extends Entity {
 		
 		private $title;
-		private $text_pres_1;
-		private $text_pres_2;
-		private $text_pres_3;
-		private $contact_us;
+		private $textpres1;
+		private $textpres2;
+		private $textpres3;
+		private $contactus;
 		private $bio;
 		
 		public function __construct($values) {
@@ -32,57 +32,57 @@
 		/**
 		 * @return mixed
 		 */
-		public function getTextPres1() {
-			return $this->text_pres_1;
+		public function getTextpres1() {
+			return $this->textpres1;
 		}
 		
 		/**
-		 * @param mixed $text_pres_1
+		 * @param mixed $textpres1
 		 */
-		public function setTextPres1($text_pres_1) {
-			$this->text_pres_1 = $text_pres_1;
-		}
-		
-		/**
-		 * @return mixed
-		 */
-		public function getTextPres2() {
-			return $this->text_pres_2;
-		}
-		
-		/**
-		 * @param mixed $text_pres_2
-		 */
-		public function setTextPres2($text_pres_2) {
-			$this->text_pres_2 = $text_pres_2;
+		public function setTextpres1($textpres1) {
+			$this->textpres1 = $textpres1;
 		}
 		
 		/**
 		 * @return mixed
 		 */
-		public function getTextPres3() {
-			return $this->text_pres_3;
+		public function getTextpres2() {
+			return $this->textpres2;
 		}
 		
 		/**
-		 * @param mixed $text_pres_3
+		 * @param mixed $textpres2
 		 */
-		public function setTextPres3($text_pres_3) {
-			$this->text_pres_3 = $text_pres_3;
+		public function setTextpres2($textpres2) {
+			$this->textpres2 = $textpres2;
 		}
 		
 		/**
 		 * @return mixed
 		 */
-		public function getContactUs() {
-			return $this->contact_us;
+		public function getTextpres3() {
+			return $this->textpres3;
 		}
 		
 		/**
-		 * @param mixed $contact_us
+		 * @param mixed $textpres3
 		 */
-		public function setContactUs($contact_us) {
-			$this->contact_us = $contact_us;
+		public function setTextpres3($textpres3) {
+			$this->textpres3 = $textpres3;
+		}
+		
+		/**
+		 * @return mixed
+		 */
+		public function getContactus() {
+			return $this->contactus;
+		}
+		
+		/**
+		 * @param mixed $contactus
+		 */
+		public function setContactus($contactus) {
+			$this->contactus = $contactus;
 		}
 		
 		/**
