@@ -34,11 +34,14 @@
 				return false;
 			} elseif($this->isSetContainText() === false) {
 				
-				$sql = "UPDATE {$this->table} SET title = :title, textpres1 = :pres1, textpres2 = :pres2, textpres3 = :pres3, contactus = :contact, bio = :bio";
+				$sql = "UPDATE {$this->table} SET title = :title, titlepres1 = :tpres1, titlepres2 = :tpres2, titlepres3 = :tpres3, textpres1 = :pres1, textpres2 = :pres2, textpres3 = :pres3, contactus = :contact, bio = :bio";
 				
 				$req = $this->db->prepare($sql);
 				
 				$req->bindValue('title', $containText->getTitle(), \PDO::PARAM_STR);
+				$req->bindValue('tpres1', $containText->getTitlepres1(), \PDO::PARAM_STR);
+				$req->bindValue('tpres2', $containText->getTitlepres2(), \PDO::PARAM_STR);
+				$req->bindValue('tpres3', $containText->getTitlepres3(), \PDO::PARAM_STR);
 				$req->bindValue('pres1', $containText->getTextPres1(), \PDO::PARAM_STR);
 				$req->bindValue('pres2', $containText->getTextPres2(), \PDO::PARAM_STR);
 				$req->bindValue('pres3', $containText->getTextPres3(), \PDO::PARAM_STR);
