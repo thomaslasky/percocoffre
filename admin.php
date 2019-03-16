@@ -56,7 +56,6 @@
 							   class="btn-large waves-effect waves-light teal lighten-1">Contact</a>
 						</div>
 						<br><br>
-					
 					</div>
 				</div>
 				<div class="parallax"><img src="assets/img/background1.jpg" alt="Unsplashed background img 1"></div>
@@ -79,9 +78,7 @@
 								
 								
 								<label for="textpres1">Modifier le Texte</label>
-								<textarea style="height: 150px;" id="textpres1" name="textpres1" type="text">
-									<?= $allTexts->getTextpres1() ?>
-								</textarea>
+								<input style="height: 150px;" id="textpres1" name="textpres1" type="text" value="<?= $allTexts->getTextpres1() ?>">
 							</div>
 						</div>
 						
@@ -96,9 +93,7 @@
 								
 								
 								<label for="textpres2">Modifier le Texte</label>
-								<textarea style="height: 150px;" id="textpres2" name="textpres2" type="text">
-									<?= $allTexts->getTextpres2() ?>
-								</textarea>
+								<input style="height: 150px;" id="textpres2" name="textpres2" type="text" value="<?= $allTexts->getTextpres2() ?>">
 							</div>
 						</div>
 						
@@ -113,9 +108,7 @@
 								
 								
 								<label for="textpres3">Modifier le Texte</label>
-								<textarea style="height: 150px;" id="textpres3" name="textpres3" type="text">
-									<?= $allTexts->getTextpres3() ?>
-								</textarea>
+								<input style="height: 150px;" id="textpres3" name="textpres3" type="text" value="<?= $allTexts->getTextpres3() ?>">
 							</div>
 						</div>
 					</div>
@@ -135,9 +128,7 @@
 							<h3><i class="mdi-content-send brown-text"></i></h3>
 							<h4>Contact</h4>
 							<label for="contactus">Modifier le Texte</label>
-							<textarea style="height: 150px;" id="contactus" name="contactus" type="text">
-									<?= $allTexts->getContactus() ?>
-							</textarea>
+							<input style="height: 150px;" id="contactus" name="contactus" type="text" value="<?= $allTexts->getContactus() ?>">
 						</div>
 					</div>
 				</div>
@@ -154,9 +145,7 @@
 						<div class="col l6 s12">
 							<h5 class="white-text">Company Bio</h5>
 							<label for="bio">Modifier le Texte</label>
-							<textarea style="height: 150px;" id="bio" name="bio" type="text">
-									<?= $allTexts->getBio() ?>
-							</textarea>
+							<input style="height: 150px; color: white;" id="bio" name="bio" type="text" value="<?= $allTexts->getBio() ?>">
 						</div>
 					</div>
 				</div>
