@@ -5,6 +5,9 @@
 	class SiteContainText extends Entity {
 		
 		private $title;
+		private $titlepres1;
+		private $titlepres2;
+		private $titlepres3;
 		private $textpres1;
 		private $textpres2;
 		private $textpres3;
@@ -27,6 +30,48 @@
 		 */
 		public function setTitle($title) {
 			$this->title = $title;
+		}
+		
+		/**
+		 * @return mixed
+		 */
+		public function getTitlepres1() {
+			return $this->titlepres1;
+		}
+		
+		/**
+		 * @param mixed $titlepres1
+		 */
+		public function setTitlepres1($titlepres1) {
+			$this->titlepres1 = $titlepres1;
+		}
+		
+		/**
+		 * @return mixed
+		 */
+		public function getTitlepres2() {
+			return $this->titlepres2;
+		}
+		
+		/**
+		 * @param mixed $titlepres2
+		 */
+		public function setTitlepres2($titlepres2) {
+			$this->titlepres2 = $titlepres2;
+		}
+		
+		/**
+		 * @return mixed
+		 */
+		public function getTitlepres3() {
+			return $this->titlepres3;
+		}
+		
+		/**
+		 * @param mixed $titlepres3
+		 */
+		public function setTitlepres3($titlepres3) {
+			$this->titlepres3 = $titlepres3;
 		}
 		
 		/**

@@ -13,11 +13,14 @@
 			
 			if($this->isSetContainText()) {
 				
-				$sql = "INSERT INTO {$this->table} (title, text_pres_1, text_pres_2, text_pres_3, contact_us, bio) VALUE (:title, :pres1, :pres2, :pres3, :contact, :bio)";
+				$sql = "INSERT INTO {$this->table} (title,titlepres1, titlepres2, titlepres3,textpres1, textpres2, textpres3, contact_us, bio) VALUE (:title, :tpres1, :tpres2, :tpres3, :pres1, :pres2, :pres3, :contact, :bio)";
 				
 				$req = $this->db->prepare($sql);
 				
 				$req->bindValue('title', $containText->getTitle(), \PDO::PARAM_STR);
+				$req->bindValue('tpres1', $containText->getTitlepres1(), \PDO::PARAM_STR);
+				$req->bindValue('tpres2', $containText->getTitlepres2(), \PDO::PARAM_STR);
+				$req->bindValue('tpres3', $containText->getTitlepres3(), \PDO::PARAM_STR);
 				$req->bindValue('pres1', $containText->getTextPres1(), \PDO::PARAM_STR);
 				$req->bindValue('pres2', $containText->getTextPres2(), \PDO::PARAM_STR);
 				$req->bindValue('pres3', $containText->getTextPres3(), \PDO::PARAM_STR);
@@ -31,7 +34,7 @@
 				return false;
 			} elseif($this->isSetContainText() === false) {
 				
-				$sql = "UPDATE {$this->table} SET title = :title, text_pres_1 = :pres1, text_pres_2 = :pres2, text_pres_3 = :pres3, contact_us = :contact, bio = :bio";
+				$sql = "UPDATE {$this->table} SET title = :title, textpres1 = :pres1, textpres2 = :pres2, textpres3 = :pres3, contactus = :contact, bio = :bio";
 				
 				$req = $this->db->prepare($sql);
 				
@@ -76,7 +79,7 @@
 			$req = $this->db->prepare($sql);
 			$req->execute();
 			
-			$results = $req->fetchAll("FETCH_ASSOC");
+			$results = $req->fetch();
 			
 			if($results === 0) {
 				return true;

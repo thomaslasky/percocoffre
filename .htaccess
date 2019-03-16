@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^espace-formation /espace-formation/index.php [L]
+RewriteCond %{SCRIPT_FILENAME} !\.(rar|msi|js|ico|gif|jpg|jpeg|png|css|zip|gz|xml|swf|php|pdf|csv|ttf|otf|eot|woff|woff2|xlsx|xls)$
+RewriteRule ^(.*)$ index.php?p=$1  [QSA,L]
+
+php_value error_reporting 2039

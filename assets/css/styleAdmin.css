@@ -1,0 +1,12 @@
+label {
+    font-size: 25px;
+    color: blue;
+}
+
+input {
+    color: grey;
+}
+
+textarea {
+    height: 50px;
+}

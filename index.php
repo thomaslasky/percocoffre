@@ -4,8 +4,6 @@
 	
 	$texts = new App\SiteContainTextManager();
 	$allTexts = $texts->getAllText();
-	
-	var_dump($allTexts);
 
 ?>
 
@@ -21,11 +19,12 @@
 		<link href="node_modules/materialize-css/dist/css/materialize.css" type="text/css" rel="stylesheet"
 		      media="screen,projection"/>
 		<link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="assets/css/FrameWork.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	</head>
 	<body>
 		<nav class="white" role="navigation">
 			<div class="nav-wrapper container">
-				<a id="logo-container" href="#" class="brand-logo">Logo</a>
+				<a id="logo-container" href="#" class="brand-logo"><?= $allTexts->getTitle() ?></a>
 				<ul class="right hide-on-med-and-down">
 					<li><a href="#contact">Contact</a></li>
 				</ul>
@@ -50,7 +49,7 @@
 				
 				</div>
 			</div>
-			<div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
+			<div class="parallax"><img src="assets/img/background1.jpg" alt="Unsplashed background img 1"></div>
 		</div>
 		
 		
@@ -62,7 +61,7 @@
 					<div class="col s12 m4">
 						<div class="icon-block">
 							<h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-							<h5 class="center">Speeds up development</h5>
+							<h5 class="center"><?= $allTexts->getTitlepres1() ?></h5>
 							
 							<p class="light"><?= $allTexts->getTextpres1() ?></p>
 						</div>
@@ -71,7 +70,7 @@
 					<div class="col s12 m4">
 						<div class="icon-block">
 							<h2 class="center brown-text"><i class="material-icons">group</i></h2>
-							<h5 class="center">User Experience Focused</h5>
+							<h5 class="center"><?= $allTexts->getTitlepres2() ?></h5>
 							
 							<p class="light"><?= $allTexts->getTextpres2() ?></p>
 						</div>
@@ -80,7 +79,7 @@
 					<div class="col s12 m4">
 						<div class="icon-block">
 							<h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-							<h5 class="center">Easy to work with</h5>
+							<h5 class="center"><?= $allTexts->getTitlepres3() ?></h5>
 							
 							<p class="light"><?= $allTexts->getTextpres3() ?></p>
 						</div>
@@ -92,15 +91,7 @@
 		
 		
 		<div class="parallax-container valign-wrapper">
-			<div class="section no-pad-bot">
-				<div class="container">
-					<div class="row center">
-						<h5 class="header col s12 light">A modern responsive front-end framework based on Material
-						                                 Design</h5>
-					</div>
-				</div>
-			</div>
-			<div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
+			<div class="parallax"><img src="assets/img/background2.jpg" alt="Unsplashed background img 2"></div>
 		</div>
 		
 		<div class="container" id="contact">
@@ -112,21 +103,29 @@
 						<p class="left-align light"><?= $allTexts->getContactus() ?></p>
 					</div>
 				</div>
-			
+				
+				<div class="row">
+					<div class="col s12 m6 l6 xl6 margin-auto">
+						<form method="post" id="sendMail">
+							<label for="telephone">Téléphone</label>
+							<input id="telephone" name="telephone" type="tel" placeholder="téléphone">
+							
+							<label for="email">Email</label>
+							<input id="email" name="email" type="email" placeholder="email" required>
+							
+							<label for="message">Votre message</label>
+							<textarea style="height: 150px;" id="message" name="message" placeholder="Votre Message...."></textarea>
+							
+							<input style="display: block; margin-top: 10px !important;" class="margin-auto" type="button" value="Envoyer" onclick="requestSendMail(readDataSendMail)">
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 		
 		
-		<div class="parallax-container valign-wrapper"><!--
-			<div class="section no-pad-bot">
-				<div class="container">
-					<div class="row center">
-						<h5 class="header col s12 light">A modern responsive front-end framework based on Material
-						                                 Design</h5>
-					</div>
-				</div>
-			</div>-->
-			<div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
+		<div class="parallax-container valign-wrapper">
+			<div class="parallax"><img src="assets/img/background3.jpg" alt="Unsplashed background img 3"></div>
 		</div>
 		
 		<footer class="page-footer teal">
@@ -135,14 +134,13 @@
 					<div class="col l6 s12">
 						<h5 class="white-text">Company Bio</h5>
 						<p class="grey-text text-lighten-4"><?= $allTexts->getBio() ?></p>
-					
-					
 					</div>
 				</div>
 			</div>
 			<div class="footer-copyright">
 				<div class="container">
-					Made by <a class="brown-text text-lighten-3" href="http://thomastartas.tk">Thomas TARTAS</a>
+					Developpé par <a class="brown-text text-lighten-3" href="http://thomastartas.tk" target="_blank">Thomas
+					                                                                                                 TARTAS</a>
 				</div>
 			</div>
 		</footer>
@@ -152,6 +150,8 @@
 		<script src="node_modules/jquery/dist/jquery.min.js"></script>
 		<script src="node_modules/materialize-css/dist/js/materialize.js"></script>
 		<script src="assets/js/init.js"></script>
+		<script src="ajax/oXHR.js"></script>
+		<script src="ajax/ajax.js"></script>
 	
 	</body>
 </html>
