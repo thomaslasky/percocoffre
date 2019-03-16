@@ -1,6 +1,11 @@
 <?php
 	
+	session_start();
 	require "vendor/autoload.php";
+	
+	if(!isset($_SESSION['isLog'])) {
+		header('Location: login.php');
+	}
 	
 	$texts = new App\SiteContainTextManager();
 	

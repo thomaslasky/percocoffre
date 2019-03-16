@@ -78,4 +78,32 @@
 			
 			return false;
 		}
+		
+		public function connexion(Admin &$admin) {
+			
+			$sql = "SELECT * FROM {$this->table} WHERE pseudo = :pseudo";
+			
+			$results = $this->db->prepare($sql);
+			
+			$results->bindValue("pseudo", $admin->getPseudo(), \PDO::PARAM_STR);
+			
+			$results->execute();
+			
+			$info = $results->fetch();
+			
+			if ($this->checkPassword($admin->getPassword(), $info['password']) === TRUE) {
+				return TRUE;
+			} else {
+				return FALSE;
+			}
+			
+		}
+		
+		private function checkPassword($pwdPassed, $pwdDB) {
+			if ($pwdPassed === $pwdDB) {
+				return TRUE;
+			} else {
+				return FALSE;
+			}
+		}
 	}

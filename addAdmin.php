@@ -3,12 +3,11 @@
 	session_start();
 	require "vendor/autoload.php";
 	
-	if(isset($_SESSION['isLog'])) {
-		header("Location: admin.php");
+	if(!isset($_SESSION['isLog'])) {
+		header("Location: login.php");
 	}
 	
 	if(isset($_POST) && !empty($_POST)) {
-		
 		$adminManager = new App\AdminManager();
 		
 		$values = [
@@ -18,8 +17,7 @@
 		
 		$admin = new App\Admin($values);
 		
-		if($adminManager->connexion($admin)) {
-			$_SESSION['isLog'] = true;
+		if($adminManager->addAdmin($admin)) {
 			header('Location: admin.php');
 		} else {
 			echo "Pseudo ou Mot de Passe incorrect !";
@@ -39,11 +37,7 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="node_modules/materialize-css/dist/css/materialize.css" type="text/css" rel="stylesheet"
 		      media="screen,projection"/>
-		<link href="assets/css/styleLogin.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-		<link href="assets/css/FrameWork.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-		
-		<script src="node_modules/jquery/dist/jquery.min.js"></script>
-		<script src="node_modules/materialize-css/dist/js/materialize.js"></script>
+		<link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	</head>
 	
 	<body class="row">
@@ -54,7 +48,7 @@
 			<label for="password">Mot de Passe</label>
 			<input id="password" name="password" type="password">
 			
-			<input class="submit margin-auto" type="submit" value="connexion">
+			<input class="submit margin-auto" type="submit" value="Créer">
 		</form>
 	</body>
 </html>
