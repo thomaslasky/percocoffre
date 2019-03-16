@@ -7,6 +7,6 @@ input {
     color: grey;
 }
 
-textarea {
-    height: 50px;
+form {
+    margin-bottom: 0;
 }

@@ -49,7 +49,7 @@
 						<br><br>
 						<h1 class="header center teal-text text-lighten-2">
 							<label for="title">Modifier le Titre</label>
-							<input id="title" name="title" type="text" value="<?= $allTexts->getTitle() ?>">
+							<input style="color: white" id="title" name="title" type="text" value="<?= $allTexts->getTitle() ?>">
 						</h1>
 						<div class="row center">
 							<a href="#contact" id="download-button"
